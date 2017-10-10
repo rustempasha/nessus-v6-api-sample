@@ -40,7 +40,7 @@ namespace Nessus6ApiSample
                     var postrjson = (JObject)JsonConvert.DeserializeObject(await postresponse.Content.ReadAsStringAsync());
                     return postrjson;
                 case "PUT":
-                    var putresponse = await hc.PostAsync(uri, new StringContent(param.ToString(), Encoding.UTF8, "application/json"));
+                    var putresponse = await hc.PutAsync(uri, new StringContent(param.ToString(), Encoding.UTF8, "application/json"));
                     var putjson = (JObject)JsonConvert.DeserializeObject(await putresponse.Content.ReadAsStringAsync());
                     return putjson;
                 case "DELETE":
